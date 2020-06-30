@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.1 (Python 3.8.3 on win32)" generated="20200602 15:40:17.561" rpa="false">
+<suite id="s1" name="ControlesDoTest" source="C:\Cursos\RobotFramework\BuiltnAvancada\ControlesDoTest.robot">
+<test id="s1-t1" name="Exemplo 01: Teste lidando com Suite e Test Teardowns">
+<kw name="Essa keyword fará o teste passar, não executando as keywords abaixo!">
+<kw name="Pass Execution" library="BuiltIn">
+<doc>Skips rest of the current test, setup, or teardown with PASS status.</doc>
+<arguments>
+<arg>message=Estou forçando meu teste a passar com sucesso!</arg>
+</arguments>
+<msg timestamp="20200602 15:40:17.617" level="INFO">Execution passed with message:
+Estou forçando meu teste a passar com sucesso!</msg>
+<status status="PASS" starttime="20200602 15:40:17.616" endtime="20200602 15:40:17.617"></status>
+</kw>
+<status status="PASS" starttime="20200602 15:40:17.616" endtime="20200602 15:40:17.617"></status>
+</kw>
+<kw name="Controlando o teardown do teste" type="teardown">
+<kw name="Run Keyword If Test Passed" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if the test passed.</doc>
+<arguments>
+<arg>Log</arg>
+<arg>Meu teste passou, não preciso apagar dados do banco de dados, por exemplo!</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Meu teste passou, não preciso apagar dados do banco de dados, por exemplo!</arg>
+</arguments>
+<msg timestamp="20200602 15:40:17.619" level="INFO">Meu teste passou, não preciso apagar dados do banco de dados, por exemplo!</msg>
+<status status="PASS" starttime="20200602 15:40:17.619" endtime="20200602 15:40:17.619"></status>
+</kw>
+<status status="PASS" starttime="20200602 15:40:17.618" endtime="20200602 15:40:17.619"></status>
+</kw>
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<arguments>
+<arg>Log</arg>
+<arg>Meu teste falhou, posso imprimir ou manter uma informação no banco de dados para analisar o erro, por exemplo!</arg>
+</arguments>
+<status status="PASS" starttime="20200602 15:40:17.619" endtime="20200602 15:40:17.620"></status>
+</kw>
+<status status="PASS" starttime="20200602 15:40:17.618" endtime="20200602 15:40:17.620"></status>
+</kw>
+<status status="PASS" starttime="20200602 15:40:17.599" endtime="20200602 15:40:17.620" critical="yes">Estou forçando meu teste a passar com sucesso!</status>
+</test>
+<test id="s1-t2" name="Exemplo 02: Teste lidando com Suite e Test Teardowns">
+<kw name="Esse keyword vai passar sozinha!">
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>"Gabriel" == "Gabriel"</arg>
+</arguments>
+<status status="PASS" starttime="20200602 15:40:17.627" endtime="20200602 15:40:17.628"></status>
+</kw>
+<status status="PASS" starttime="20200602 15:40:17.625" endtime="20200602 15:40:17.628"></status>
+</kw>
+<kw name="Esse keyword vai passar sozinha!">
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>"Gabriel" == "Gabriel"</arg>
+</arguments>
+<status status="PASS" starttime="20200602 15:40:17.629" endtime="20200602 15:40:17.630"></status>
+</kw>
+<status status="PASS" starttime="20200602 15:40:17.629" endtime="20200602 15:40:17.630"></status>
+</kw>
+<kw name="Esse aqui também vai passar com uma condição e vai parar de executar as keywords abaixo!">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Should Be True</arg>
+<arg>"Gabriel" == "carvalho"</arg>
+</arguments>
+<assign>
+<var>${STATUS}</var>
+</assign>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>"Gabriel" == "carvalho"</arg>
+</arguments>
+<msg timestamp="20200602 15:40:17.633" level="FAIL">'"Gabriel" == "carvalho"' should be true.</msg>
+<status status="FAIL" starttime="20200602 15:40:17.632" endtime="20200602 15:40:17.633"></status>
+</kw>
+<msg timestamp="20200602 15:40:17.633" level="INFO">${STATUS} = False</msg>
+<status status="PASS" starttime="20200602 15:40:17.632" endtime="20200602 15:40:17.633"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${STATUS}</arg>
+</arguments>
+<msg timestamp="20200602 15:40:17.634" level="INFO">False</msg>
+<status status="PASS" starttime="20200602 15:40:17.633" endtime="20200602 15:40:17.634"></status>
+</kw>
+<kw name="Pass Execution If" library="BuiltIn">
+<doc>Conditionally skips rest of the current test, setup, or teardown with PASS status.</doc>
+<arguments>
+<arg>${STATUS}</arg>
+<arg>message=Gabriel é igual a Gabriel, então passou!!</arg>
+</arguments>
+<status status="PASS" starttime="20200602 15:40:17.635" endtime="20200602 15:40:17.635"></status>
+</kw>
+<status status="PASS" starttime="20200602 15:40:17.631" endtime="20200602 15:40:17.636"></status>
+</kw>
+<kw name="Esse keyword vai passar sozinha!">
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>"Gabriel" == "Gabriel"</arg>
+</arguments>
+<status status="PASS" starttime="20200602 15:40:17.638" endtime="20200602 15:40:17.639"></status>
+</kw>
+<status status="PASS" starttime="20200602 15:40:17.636" endtime="20200602 15:40:17.639"></status>
+</kw>
+<kw name="Esse keyword vai passar sozinha!">
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>"Gabriel" == "Gabriel"</arg>
+</arguments>
+<status status="PASS" starttime="20200602 15:40:17.640" endtime="20200602 15:40:17.641"></status>
+</kw>
+<status status="PASS" starttime="20200602 15:40:17.640" endtime="20200602 15:40:17.641"></status>
+</kw>
+<kw name="Controlando o teardown do teste" type="teardown">
+<kw name="Run Keyword If Test Passed" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if the test passed.</doc>
+<arguments>
+<arg>Log</arg>
+<arg>Meu teste passou, não preciso apagar dados do banco de dados, por exemplo!</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Meu teste passou, não preciso apagar dados do banco de dados, por exemplo!</arg>
+</arguments>
+<msg timestamp="20200602 15:40:17.644" level="INFO">Meu teste passou, não preciso apagar dados do banco de dados, por exemplo!</msg>
+<status status="PASS" starttime="20200602 15:40:17.643" endtime="20200602 15:40:17.644"></status>
+</kw>
+<status status="PASS" starttime="20200602 15:40:17.643" endtime="20200602 15:40:17.644"></status>
+</kw>
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<arguments>
+<arg>Log</arg>
+<arg>Meu teste falhou, posso imprimir ou manter uma informação no banco de dados para analisar o erro, por exemplo!</arg>
+</arguments>
+<status status="PASS" starttime="20200602 15:40:17.644" endtime="20200602 15:40:17.645"></status>
+</kw>
+<status status="PASS" starttime="20200602 15:40:17.642" endtime="20200602 15:40:17.645"></status>
+</kw>
+<status status="PASS" starttime="20200602 15:40:17.622" endtime="20200602 15:40:17.646" critical="yes"></status>
+</test>
+<test id="s1-t3" name="Exemplo 04: Teste lidando com Suite e Test Teardowns">
+<kw name="Esse keyword vai falhar sozinha!">
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>"Gabriel" == "Gabiru"</arg>
+</arguments>
+<msg timestamp="20200602 15:40:17.651" level="FAIL">'"Gabriel" == "Gabiru"' should be true.</msg>
+<status status="FAIL" starttime="20200602 15:40:17.650" endtime="20200602 15:40:17.651"></status>
+</kw>
+<status status="FAIL" starttime="20200602 15:40:17.650" endtime="20200602 15:40:17.651"></status>
+</kw>
+<kw name="Controlando o teardown do teste" type="teardown">
+<kw name="Run Keyword If Test Passed" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if the test passed.</doc>
+<arguments>
+<arg>Log</arg>
+<arg>Meu teste passou, não preciso apagar dados do banco de dados, por exemplo!</arg>
+</arguments>
+<status status="PASS" starttime="20200602 15:40:17.655" endtime="20200602 15:40:17.655"></status>
+</kw>
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<arguments>
+<arg>Log</arg>
+<arg>Meu teste falhou, posso imprimir ou manter uma informação no banco de dados para analisar o erro, por exemplo!</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Meu teste falhou, posso imprimir ou manter uma informação no banco de dados para analisar o erro, por exemplo!</arg>
+</arguments>
+<msg timestamp="20200602 15:40:17.656" level="INFO">Meu teste falhou, posso imprimir ou manter uma informação no banco de dados para analisar o erro, por exemplo!</msg>
+<status status="PASS" starttime="20200602 15:40:17.656" endtime="20200602 15:40:17.656"></status>
+</kw>
+<status status="PASS" starttime="20200602 15:40:17.655" endtime="20200602 15:40:17.656"></status>
+</kw>
+<status status="PASS" starttime="20200602 15:40:17.652" endtime="20200602 15:40:17.657"></status>
+</kw>
+<status status="FAIL" starttime="20200602 15:40:17.648" endtime="20200602 15:40:17.657" critical="yes">'"Gabriel" == "Gabiru"' should be true.</status>
+</test>
+<kw name="Controlando o teardown da suite" type="teardown">
+<kw name="Run Keyword If All Tests Passed" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if all tests passed.</doc>
+<arguments>
+<arg>Log</arg>
+<arg>Todos os testes passaram, posso enviar um e-mail, por exemplo!</arg>
+</arguments>
+<status status="PASS" starttime="20200602 15:40:17.660" endtime="20200602 15:40:17.660"></status>
+</kw>
+<kw name="Run Keyword If Any Tests Failed" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if one or more tests failed.</doc>
+<arguments>
+<arg>Log</arg>
+<arg>Alguns testes falharam, posso enviar um e-mail, por exemplo!</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Alguns testes falharam, posso enviar um e-mail, por exemplo!</arg>
+</arguments>
+<msg timestamp="20200602 15:40:17.661" level="INFO">Alguns testes falharam, posso enviar um e-mail, por exemplo!</msg>
+<status status="PASS" starttime="20200602 15:40:17.661" endtime="20200602 15:40:17.661"></status>
+</kw>
+<status status="PASS" starttime="20200602 15:40:17.660" endtime="20200602 15:40:17.661"></status>
+</kw>
+<status status="PASS" starttime="20200602 15:40:17.659" endtime="20200602 15:40:17.662"></status>
+</kw>
+<status status="FAIL" starttime="20200602 15:40:17.561" endtime="20200602 15:40:17.662"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="1">Critical Tests</stat>
+<stat pass="2" fail="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="1" id="s1" name="ControlesDoTest">ControlesDoTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
